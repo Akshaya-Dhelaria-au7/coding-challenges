@@ -1,0 +1,76 @@
+body {
+  background-color: teal;
+}
+
+div.parking {
+  margin: 200px;
+  background-color: white;
+  padding: 10px;
+  height: 65vh;
+  width: 65vw;
+}
+
+div img {
+  padding: 50px;
+  height: 70px;
+  width: 70px;
+}
+
+div.container:hover img {
+  position: relative;
+  -webkit-animation-name: car;
+          animation-name: car;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+@-webkit-keyframes car {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 250px;
+    top: 10px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50% {
+    left: 250px;
+    top: 200px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+}
+
+@keyframes car {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 250px;
+    top: 10px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50% {
+    left: 250px;
+    top: 200px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip the Card</title>
+    <style>
+        body{
+            border: 2px solid black;
+            height: 500px;
+            width: 250px;
+            /* display: flex;
+            position: relative;;
+            justify-content: center;
+            top: 200px;
+            left: 500px;             */ 
+        }
+        div.container, div.container1{
+            border: 2px solid black;
+            margin: 20px;
+            height: 200px;
+            width: 200px;
+            perspective: 1000px;
+            transition: transform 1s
+            /* transform: rotateY(360deg); */
+        }
+        h4{
+            text-align: center;
+        }
+        .container:hover{
+            transform: rotateY(180deg);
+        }
+        .container1:hover{
+            transform: rotateY(180deg);
+        }
+        .faceup .firstDiv {
+            display: block;
+        }
+
+        .faceup .secondDiv {
+            display: none;
+        }
+        .facedown .secondDiv {
+            display: block;
+        } 
+        .facedown .firstDiv {
+            display : none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container faceup">
+        <div class="firstDiv">
+            <h4>List 1 Items</h4>
+            <ul class="list1">
+                <li>CSS</li>
+            </ul>
+        </div>
+        <div class="secondDiv">CSS is used to display content</div> 
+    </div>
+    <div class="container1">
+        <h4>List 2 Items</h4>
+        <ul class="list2">
+            <li>HTML</li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    const containerClass = document.getElementsByClassName("container")[0]
+
+    containerClass.addEventListener("transitionend",onClickChangeContentOne)
+
+    function onClickChangeContentOne(){
+        if(containerClass.classList.contains('faceup')) {
+            containerClass.classList.remove('faceup');
+            containerClass.classList.add('facedown');
+        } else {
+            containerClass.classList.remove('facedown');
+            containerClass.classList.add('faceup');
+        }
+    }
+
+
+    const containerOneClass = document.getElementsByClassName("container1")[0]
+    containerOneClass.addEventListener("transitionend",onClickChangeContentTwo)
+
+</script>
+</html>

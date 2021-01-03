@@ -1,0 +1,28 @@
+Create database bank:
+
+Command: CREATE DATABASE bank;
+
+Create tables in that DB:
+
+Command: CREATE TABLE customer(ACCOUNT_ID INT PRIMARY KEY NOT NULL, BRANCH TEXT NOT NULL, ACCOUNT TEXT NOT NULL, CUSTOMER TEXT NOT NULL,FINANCICIAL_TRANSACTION INT NOT NULL , LOAN INT NOT NULL , DEPOSIT INT NOT NULL);
+
+Inserting data into table:
+
+Command: INSERT INTO customer (account_id,branch,account,customer,financicial_transaction,loan,deposit) VALUES (1,'Chickpet','Savings','Akshay',2000,0,2000);
+
+
+Returning data from table:
+
+Command: SELECT * FROM customer;
+
+
+Returning all the customers who has an account in the Bangalore branch:
+
+Command: SELECT branch FROM customer WHERE branch='bangalore';
+
+
+Returning customers who have both savings and loan accounts:
+
+Command: SELECT account FROM customer WHERE account='Loan' and account='Saving';
+
+

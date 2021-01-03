@@ -1,0 +1,7 @@
+1) In python, the size of float and integer is the same in terms of bytes then how is it able to store such large values?
+Since Float translates the value into the smaller form for example 36796775533267867996501111168. In float it stores this value as 3.6*10^30.
+
+
+2) How many bits are there in 1GB and 1MB?
+1 MB will have 1024*1024*8= 8388608 bits.
+1 GB will have 1024*1024*1024*8= 8589934592 bits. 

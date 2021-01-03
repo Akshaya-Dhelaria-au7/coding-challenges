@@ -1,0 +1,6 @@
+What are the valid deadlock prevention schemes?
+
+Release all resources before requesting a new resource. 
+Number the resources uniquely and never request a lower numbered resource than the last one requested.
+Request and all required resources be allocated before execution.
+

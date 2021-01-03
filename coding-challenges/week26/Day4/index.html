@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects in JS</title>
+</head>
+<body>
+    <h3>User Model</h3>
+</body>
+<script type="text/javascript">
+const userModal = function(name,age,gender,nationality){
+    this.name = name,
+    this.age= age,
+    this.gender= gender,
+    this.nationality = nationality
+}
+
+userModal.prototype.userObj = function(){
+    return this.name
+}
+
+const user = new userModal("Akshaya",23,"Male", "India")
+console.log(user.userObj())
+</script>
+</html>

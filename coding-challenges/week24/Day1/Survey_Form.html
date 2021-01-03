@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Survey Form
+        </title>
+    </head>
+    <body>
+        <section>
+            <form onsubmit="return confirm('Are you sure you want to submit the Survey?')">
+                <div>
+                    <label>First Name:</label>
+                    <input type="text" placeholder="Enter your first name" name="first_name" required>
+                </div>
+                <br>
+                <div>
+                    <label>Last Name:</label>
+                    <input type="text" placeholder="Enter your last name" name="last_name" required>
+                </div>
+                <br>
+                <div>
+                    <label>Address:</label>
+                    <textarea name="address" placeholder="Enter your address" rows="2"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label>State</label>
+                    <select name="state">
+                        <option></option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chattisgarh</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himacha Pradesh</option>
+                        <option>Jharkhan</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharastra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odhisa</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangan</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhan</option>
+                        <option>West Bengal</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" placeholder="Enter your password" name="password" required>
+                </div>
+                <br>
+                <div>
+                    <label>Gender:</label>
+                    <input type="radio" name="gender" value="male">
+                    <label>Male</label>
+                    <input type="radio" name="gender" value="female">
+                    <label>Female</label>
+                </div>
+                <br>
+                <div>
+                    <label>Your Age:</label>
+                    <br>
+                    <br>
+                    <input type="radio" name="age" value="1">
+                    <label>18-25</label>
+                    <br>
+                    <input type="radio" name="age" value="2">
+                    <label>26-32</label>
+                    <br>
+                    <input type="radio" name="age" value="3">
+                    <label>33-38</label>
+                    <br>
+                    <input type="radio" name="age" value="4">
+                    <label>39-45</label>
+                    <br>
+                    <input type="radio" name="age" value="5">
+                    <label>46-52</label>
+                    <br>
+                    <input type="radio" name="age" value="6">
+                    <label>52-60</label>
+                    <br>
+                    <input type="radio" name="age" value="7">
+                    <label>Senior Citizen</label>
+                    <br>
+                    <input type="radio" name="age" value="8">
+                    <label>Super Senior Citizen</label>
+                </div>
+                <br>
+                <div>
+                    <label>Educational Qualification:</label>
+                    <input type="text" placeholder="Enter your education" name="education" required>
+                </div>
+                <br>
+                <div>
+                    <label>Your Occupation:</label>
+                    <input type="text" placeholder="Enter your occupation" name="occupation" required>
+                </div>
+                <br>
+                <div>
+                    <label>Income Per Month(in INR):</label>
+                    <br>
+                    <br>    
+                    <input type="radio" name="income">
+                    <label>Less than 25,000</label>
+                    <br>
+                    <input type="radio" name="income">
+                    <label>25,000-50,000</label>
+                    <br>
+                    <input type="radio" name="income">
+                    <label>50,000-75,000</label>
+                    <br>
+                    <input type="radio" name="income">
+                    <label>75,000-1,00,000</label>
+                    <br>
+                    <input type="radio" name="income">
+                    <label>Greater than 1,00,000</label>
+                </div>
+                <br>
+                <div>
+                    <label>Comments:</label>
+                    <textarea type="text" rows="3" cols="50"></textarea>
+                </div>
+                <br>
+                <input type="reset" name="reset" value="Reset Form">
+                <input type="submit" name="Submit" value="Submit Survey">
+                
+            </form>
+        </section>
+    </body>
+</html>

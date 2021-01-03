@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap');
+
+li::first-letter{
+    font-variant: xx-large;
+    color:red;
+}
+/* It will remove bullets from unordered list */
+ul.para{
+    list-style-type: none;
+}
+body{
+    font-family: 'Fondamento', cursive;
+}

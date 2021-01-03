@@ -1,0 +1,10 @@
+Github link:
+
+https://github.com/Akshaya-Dhelaria-au7/youtube_clone
+
+Deployed link on Netlify:
+
+https://trusting-goldwasser-c74069.netlify.app/
+
+
+ 

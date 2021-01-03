@@ -1,0 +1,101 @@
+Create DB:
+
+Command: CREATE DATABASE bankdb;
+
+Creating table users and adding fields:
+
+Command: create table users (id int primary key,name text not null,age int not null,phone_number int not null,address char(50) not null);
+
+
+Inserting values into table users:
+
+Command: insert into users (id,name,age,phone_number,address) values (1,'akshay',23,777777777,'Bangalore');
+
+
+Creating table acccountInfo and adding fields:
+
+Command:  create table accountInfo (id int not null, accountNumber int not null,balance real not null, user_id int primary key not null);
+
+Joins:
+
+1. Cross Join:It matches every row of first table with every row of second table. If tables have a and b columns, the output of the table will be a+b.
+
+Command: select name,balance,accountNumber from users cross join accountInfo;
+
+Output:
+
+  name   | balance | accountnumber 
+---------+---------+---------------
+ akshay  |   35000 |        333222
+ akshaya |   35000 |        333222
+ aks     |   35000 |        333222
+ aksu    |   35000 |        333222
+ akshay  |     350 |        339872
+ akshaya |     350 |        339872
+ aks     |     350 |        339872
+ aksu    |     350 |        339872
+ akshay  |     350 |        339872
+ akshaya |     350 |        339872
+ aks     |     350 |        339872
+ aksu    |     350 |        339872
+(12 rows)
+
+2. Inner join:
+
+Command: select user_id,name,balance,accountNumber from users  join accountInfo on users.id=accountInfo.user_id;
+
+Output:
+
+ user_id |  name   | balance | accountnumber 
+---------+---------+---------+---------------
+       1 | akshay  |   35000 |        333222
+       2 | akshaya |     350 |        339872
+(2 rows)
+
+
+3. Left outer join:
+
+Command: select user_id,name,balance,accountNumber from users  left outer join accountInfo on users.id=accountInfo.user_id;
+
+Output:
+
+ user_id |  name   | balance | accountnumber 
+---------+---------+---------+---------------
+       1 | akshay  |   35000 |        333222
+       2 | akshaya |     350 |        339872
+         | aks     |         |              
+         | aksu    |         |              
+(4 rows)
+
+
+4. Right outer join:
+
+Command: select user_id,name,balance,accountNumber from users right outer join accountInfo on users.id=accountInfo.user_id;
+
+Output:
+
+  user_id |  name   | balance | accountnumber 
+---------+---------+---------+---------------
+       1 | akshay  |   35000 |        333222
+       3 |         |     350 |        339872
+       2 | akshaya |     350 |        339872
+(3 rows)
+
+
+
+5. Full Outer Join:
+
+Command: select user_id,name,balance,accountNumber from users full outer join accountInfo on users.id=accountInfo.user_id;
+
+Output:
+
+ user_id |  name   | balance | accountnumber 
+---------+---------+---------+---------------
+       1 | akshay  |   35000 |        333222
+       3 |         |     350 |        339872
+       2 | akshaya |     350 |        339872
+         | aks     |         |              
+         | aksu    |         |              
+(5 rows)
+
+

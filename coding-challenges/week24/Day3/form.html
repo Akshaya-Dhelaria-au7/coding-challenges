@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="mailto:akshaydhelari@gmail.com" onsubmit="return confirm('Your order has been placed')" class="Purchase">
+        <fieldset>
+            <legend><strong>Purchases</strong></legend>
+            <br>
+            <div>
+                <label>Product Name:</label>
+                <select name="Product Name" required>
+                    <option></option>
+                    <option>Shoes</option>
+                    <option>Clothing</option>
+                    <option>Apparels</option>
+                    <option>Watches</option>
+                    <option>Home Appliances</option>
+                    <option>Books</option>
+                    <option>Grocery</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label>Quantity:</label>
+                <input type="number" name="quantity" value="" min="1" required>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Personal Details</strong></legend>
+            <br>
+            <div>
+                <div>
+                    <label>First Name:</label>
+                    <br>
+                    <input type="text" name="first_name" value="" required>
+                </div>
+                <br>
+                <div>
+                    <label>Last Name:</label>
+                    <br>
+                    <input type="text" name="last_name" value="" required>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Credit Card Details</strong></legend>
+            <br>
+            <div>
+                <label>Credit Card Type:</label>
+                <br>
+                <input type="radio" name="credit_card_type">
+                <label>Visa</label>
+                <br>
+                <input type="radio" name="credit_card_type">
+                <label>Master Card</label> 
+                <br>
+                <br>
+                <label>Credit Card Number:</label>
+                <br>
+                <input type="text" name="credit_card_number" value="" required> 
+                <br>
+                <br>
+                <label>Expiry Date:</label>
+                <br>
+                <input type="date" name="expiry_date" value="" min="2020-07-08" required>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Billing Information</strong></legend>
+            <br>
+            <div>        
+                <label>Postal Address:</label>
+                <br>
+                <textarea type="text" name="postal_address" placeholder="Enter your Postal Address" rows="5" cols="50" required></textarea>
+            </div>
+            <br>
+            <div>
+                <label>Home Address:</label>
+                <input type="checkbox">Same As Above
+                <br>
+                <textarea type="text" name="home_address" placeholder="Enter your Home Address" rows="5" cols="50"></textarea>
+            </div>
+        </fieldset>
+        <br>
+        <input type="submit" name="submit" value="Place my order">
+        <br>
+    </form>
+    <br>
+</body>
+</html>

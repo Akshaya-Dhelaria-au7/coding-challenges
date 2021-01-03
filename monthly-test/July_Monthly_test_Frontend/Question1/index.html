@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Me</title>
+    <style>
+        body{
+            border: 2px solid black;
+            height: 630px;
+            display: flex;  
+            flex: 1;
+        }
+        h2{
+            color: teal;
+            text-align: center;
+        }
+        p{
+            display: flex;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        img{
+            position: absolute;
+            height: 150px;
+            top: 250px;
+            left: 1130px;
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color:black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="images" src="Akshay.jpg" alt="image" style="display: none;">
+        <button class="btn btn-info" onclick="onClickImage()" style="margin: 2px;">Click to get image</button>
+        <nav class="navbar navbar-dark bg-light">
+            <h2>About Me</h2>
+        </nav>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Ad asperiores praesentium labore placeat harum dolore 
+            voluptatibus tenetur autem maiores suscipit rerum amet unde 
+            culpa quibusdam reiciendis, facere reprehenderit itaque, 
+            corporis fuga neque inventore ab. Fugit ipsa dolorem, amet 
+            accusantium mollitia atque ad repellendus ducimus! Fugiat 
+            at dolore et explicabo ut.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Ad asperiores praesentium labore placeat harum dolore 
+            voluptatibus tenetur autem maiores suscipit rerum amet unde 
+            culpa quibusdam reiciendis, facere reprehenderit itaque, 
+            corporis fuga neque inventore ab. Fugit ipsa dolorem, amet 
+            accusantium mollitia atque ad repellendus ducimus! Fugiat 
+            at dolore et explicabo ut.
+        </p>
+    </div>
+    <footer class="page-footer">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright
+            <a href="https://www.linkedin.com/in/akshaya-kumar-h-dhelaria-264852142/" target="blank">
+            <i class="fa fa-linkedin" style="font-size:20px"></i></a>
+        </div>            
+    </footer>
+</body>
+<script type="text/javascript">
+    const imageClass = document.getElementsByClassName("images")[0]
+    const buttonSelector = document.getElementsByClassName("btn")[0]
+    //Toggle the image
+    function onClickImage(){
+        if(imageClass.style.display == "none"){
+            imageClass.style.display = "block"
+        }else{
+            imageClass.style.display = "none"
+        }
+    }
+</script>
+</html>

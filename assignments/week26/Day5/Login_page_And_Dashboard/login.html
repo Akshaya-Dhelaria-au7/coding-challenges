@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <form class="forms"> 
+        <div class="container">
+            <h2>Login to continue</h2>
+            <div class="username">
+                <label>Username:</label>
+                <input type="name" name="user_name" value="" required>
+            </div>
+            <br>
+            <div class="password">
+                <label>Password:</label>
+                <input type="password" name="password" value="" required>
+            </div>
+            <br>
+            <div class="login_button">
+                <input type="submit"  value="Login">
+            </div>
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+    const loginButton = $("form").find('[type="submit"]')[0]
+    loginButton.addEventListener('click', checkUsernameAndPassword, true);
+    var options = {
+        Username: "robin",
+        Password: "Robin@123"
+    }
+
+    function checkUsernameAndPassword(e){
+        // console.log(e);
+        const userNameInput = $("form").find('[type="name"]').val()
+        const passwordInput = $("form").find('[type="password"]').val()
+        if(options.Username == userNameInput && options.Password == passwordInput ){
+
+            //Setting key values in localStorage
+            localStorage.setItem('username',userNameInput)
+            localStorage.setItem('password',passwordInput)
+            window.location.replace("http://127.0.0.1:5500/Login_Page_And_Dashboard/dashboard.html")
+            e.preventDefault();
+        }else{
+            alert("Wrong username or password")
+            return false
+        }
+    
+    }
+
+</script>
+</html>

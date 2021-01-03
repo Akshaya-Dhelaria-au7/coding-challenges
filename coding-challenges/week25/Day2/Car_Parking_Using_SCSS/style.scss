@@ -1,0 +1,39 @@
+$bgcolor: teal;
+$property: rotate();
+
+body {
+    background-color: $bgcolor;
+}
+div{
+    &.parking{
+        margin:200px;
+        background-color:white;
+        padding:10px;
+        height: 65vh;
+        width: 65vw;
+    }
+    img{
+        padding: 50px;
+        height: 70px;
+        width: 70px;  
+    }
+    &.container:hover img{
+        position: relative;
+        animation-name: car;
+        animation-duration: 10s;
+        animation-timing-function: ease-out;
+        // animation-direction: alternate-reverse;
+        @mixin tranform($property) {
+            transform: $property;
+        }
+        @include tranform(rotate(10deg))
+
+    } 
+    @keyframes car{
+        0%   {left:0px; top:0px;}
+        25%  {left:250px; top:10px ; transform:rotate(30deg)}
+        50%  {left:250px; top:200px;transform: rotate(90deg);}
+        75%  {left:0px; top:200px;}
+        
+    }
+}

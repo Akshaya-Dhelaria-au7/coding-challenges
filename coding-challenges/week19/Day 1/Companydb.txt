@@ -1,0 +1,128 @@
+Create DB:
+
+Command: CREATE DATABASE Companydb;
+
+Creating table compnydb and adding fields:
+
+Command: 	CREATE TABLE compnydb (ID serial not null, Name text not null,Age CHAR(3) not null,PhoneNumber CHAR(15) not null, Address CHAR(50) not null,Salary real not null, Created_at text default now());
+
+Inserting values into table compnydb:
+
+Command: INSERT INTO compnydb (name,age,phonenumber,address,salary) VALUES ('akshay',23,7776665554,'Koramangala',25000.00);
+
+
+Creating table department and adding fields:
+
+Command: CREATE TABLE department (ID serial not null,Deparments CHAR(25) not null,emp_id primary key serial not null,Created_at text default now());
+
+Joins:
+
+1. Cross Join:It matches every row of first table with every row of second table. If tables have a and b columns, the output of the table will be a+b.
+
+Command: select  emp_id,name,deparments from compnydb cross join department;
+
+
+Output: 
+ emp_id |  name   |        deparments         
+--------+---------+---------------------------
+      1 | akshay  | Sales                    
+      1 | pakshal | Sales                    
+      1 | gourav  | Sales                    
+      1 | someone | Sales                    
+      1 | anyone  | Sales                    
+      2 | akshay  | Purchase                 
+      2 | pakshal | Purchase                 
+      2 | gourav  | Purchase                 
+      2 | someone | Purchase                 
+      2 | anyone  | Purchase                 
+      3 | akshay  | Marketing                
+      3 | pakshal | Marketing                
+      3 | gourav  | Marketing                
+      3 | someone | Marketing                
+      3 | anyone  | Marketing                
+      4 | akshay  | Engineer                 
+      4 | pakshal | Engineer                 
+      4 | gourav  | Engineer                 
+      4 | someone | Engineer                 
+      4 | anyone  | Engineer 
+
+
+ 
+2. Inner join: It takes 2 tables and if they find a foreign key, a new table is created out of that. For example, there is a table X and another table Y. If they have same foreign key, a new table will be created on that basis like table Z.
+
+Command: select  emp_id,name,deparments from compnydb inner join department on compnydb.id=department.emp_id;
+
+OR
+
+Command: select  emp_id,name,deparments from compnydb join department on compnydb.id=department.emp_id;
+
+OR
+
+Command: SELECT * FROM compnydb join department ON compnydb.id=department.emp_id;
+
+Output:
+ emp_id |  name   |        deparments         
+--------+---------+---------------------------
+      1 | akshay  | Sales                    
+      2 | pakshal | Purchase                 
+      3 | gourav  | Marketing                
+      4 | someone | Engineer                 
+(4 rows)
+
+
+3. Left/Left outer join:
+
+Command: select emp_id,name,deparments from compnydb left join department on compnydb.id=department.emp_id;
+
+Output:
+ emp_id |        name         |        deparments         
+--------+---------------------+---------------------------
+      1 | akshay              | Sales                    
+      2 | pakshal             | Purchase                 
+      3 | gourav              | Marketing                
+      4 | someone             | Engineer                 
+      5 | anyone              | Tech                     
+      6 |                     | Techonology              
+      7 | aaaaa\              | Taxation                 
+      8 | aaaddd              | Accountas                
+      9 | aaadddeee           | HR                       
+        | aaadddeeeefefe      | 
+        | aaadddeeeefejhgjefr | 
+
+
+4.Right Outer join:
+
+Command: select emp_id,name,deparments from compnydb right outer join department on compnydb.id=department.emp_id;
+
+Output: 
+ emp_id |   name    |        deparments         
+--------+-----------+---------------------------
+      1 | akshay    | Sales                    
+      2 | pakshal   | Purchase                 
+      3 | gourav    | Marketing                
+      4 | someone   | Engineer                 
+      5 | anyone    | Tech                     
+      6 |           | Techonology              
+      7 | aaaaa\    | Taxation                 
+      8 | aaaddd    | Accountas                
+      9 | aaadddeee | HR          
+
+5. Full Outer Join:
+
+Command: select emp_id,name,deparments from compnydb full outer join department on compnydb.id=department.emp_id;
+
+
+Output:
+ emp_id |        name         |        deparments         
+--------+---------------------+---------------------------
+      1 | akshay              | Sales                    
+      2 | pakshal             | Purchase                 
+      3 | gourav              | Marketing                
+      4 | someone             | Engineer                 
+      5 | anyone              | Tech                     
+      6 |                     | Techonology              
+      7 | aaaaa\              | Taxation                 
+      8 | aaaddd              | Accountas                
+      9 | aaadddeee           | HR                       
+        | aaadddeeeefefe      | 
+        | aaadddeeeefejhgjefr | 

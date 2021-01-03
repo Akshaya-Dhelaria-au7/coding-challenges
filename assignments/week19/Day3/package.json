@@ -1,0 +1,26 @@
+{
+  "name": "week19_day3_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node app.js"
+  },
+  "keywords": [
+    "express",
+    "es6",
+    "mvc"
+  ],
+  "author": "Akshaya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "seed": "^0.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
+  }
+}

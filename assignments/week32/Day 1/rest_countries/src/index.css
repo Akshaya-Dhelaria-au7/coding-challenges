@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img{
+  height:200px;
+  width:200px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+body{
+  background-color: gainsboro;
+}
+
+nav{
+  background-color:floralwhite;
+  height:70px;
+  position: fixed;
+  margin-left:10px
+}
+
+button {
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+input{
+  position: fixed;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 80%;
+  background: #f1f1f1;
+  margin-left: 47px;
+  max-width:300px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: auto;
+  /* align-items: center; */
+  /* align-content: center; */
+}
+
+h3{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.card{
+  width: 18rem;
+  padding: 1px;
+  border-radius: 10px;
+}
+
+h5,p{
+  text-align: left;
+} 
+
+ul{
+  display:flex;
+  justify-content:space-around;
+}

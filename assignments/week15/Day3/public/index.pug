@@ -1,0 +1,19 @@
+html
+    head
+        title Using PUG 
+    body
+        h1 Using PUG template engine
+        ul
+            if arr
+                each i in arr
+                    li=i["userId"]
+                    li=i["id"]
+                    li=i["title"]
+                    li=i["body"]
+
+            else if arr1
+                    li=arr1["userId"]
+                    li=arr1["id"]
+                    li=arr1["title"]
+                    li=arr1["body"]    
+        

@@ -1,0 +1,12 @@
+'''https://www.geeksforgeeks.org/find-number-pairs-xy-yx/'''
+
+def getPairs(a):  
+    count = 0
+    for i in range(len(a)): 
+        for j in range(len(a)): 
+            if (a[i] < a[j]): 
+                count += 1
+    return count 
+
+a = [ 2, 4, 3, 1 ] 
+print(getPairs(a))

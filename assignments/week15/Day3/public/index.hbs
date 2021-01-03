@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Using HBS</title>
+    </head>
+    <body>
+        <h2>Using HBS Template Engine</h2>
+        {{#if arr}}
+            {{#each arr}}
+                <li>{{"userId"}}</li>
+                <li>{{"id"}}</li>
+                <li>{{"title"}}</li>
+                <li>{{"body"}}</li>
+            {{/each}}
+        
+        
+        {{else}}
+            {{#if arr1}}
+                <li>{{arr1.userId}}</li>
+                <li>{{arr1.id}}</li>
+                <li>{{arr1.title}}</li>
+                <li>{{arr1.body}}</li>
+            {{/if}}
+        {{/if}}
+    </body>
+</html>

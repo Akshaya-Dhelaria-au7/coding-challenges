@@ -1,0 +1,6 @@
+Is merge sort stable, inplace and find its time complexity?
+
+Yes, Merge sort is stable and in-place.Here, in-space means it does not occupy extra memory storage for merge operation in best case.
+
+Time Complexity: Time complexity in all the cases will be O(n*log n)
+

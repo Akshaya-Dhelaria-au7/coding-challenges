@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Walking Human Through Keys</title>
+    <style>
+        #image{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            top: 200px;
+        }
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            /* background-color: teal; */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="human.gif" alt="Walking human">
+    </div>
+</body>
+<script>
+    $(document).keydown(function(e){
+        //Right Arrow Key
+        if(e.which == '39'){
+            $("#image").finish().animate({
+                left: "+=20"
+            });
+        }
+        //Up arrow key
+        else if(e.which == '38'){
+            $("#image").animate({
+                bottom: "+=30"
+            });
+        }
+        //Left Arrow Key
+        else if(e.which == '37'){
+            $("#image").animate({
+                right: "+=30"
+            });
+        }
+        //Down Arrow Key
+        else if(e.which == '40'){
+            $("#image").finish().animate({
+                top: "+=30"
+            });
+        }
+    });
+</script>
+</html>

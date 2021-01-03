@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Fetching API using Jquery</title>
+</head>
+<body>
+    <div class="fakeData"></div>
+</body>
+<script type="text/javascript">
+    const formSelector = $(document).find(".fakeData")
+
+    const data = new XMLHttpRequest()
+    // console.dir(data)
+    data.open("GET",'https://jsonplaceholder.typicode.com/albums')
+    data.send()
+
+    data.onload=()=>{
+        // data.abort()
+        console.log(JSON.parse(data.response))
+    }
+</script>
+</html>

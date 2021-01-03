@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>EJS</title>
+    </head>
+    <body>
+        <h2>Using EJS Template</h2>
+        <% if(arr.length > 0){ %>
+            <% for (let i in arr) { %>
+                <li>
+                    <%=arr[i].userId %>
+                    <br>
+                    <%= arr[i].id %>
+                    <br>
+                    <%= arr[i].title %>
+                    <br>
+                    <%= arr[i].body %>
+                </li>
+            <% } %>
+        <% else if(arr1.length>0){ %>
+                <li>
+                    <%=arr1.userId %>
+                    <br>
+                    <%= arr1.id %>
+                    <br>
+                    <%= arr1.title %>
+                    <br>
+                    <%= arr1.body %>
+                </li>
+                <% } %>    
+        <% } %>
+    </body>
+</html>

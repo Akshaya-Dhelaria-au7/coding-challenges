@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>Progress Bar Showing Image Upload Using Jquery</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        button{
+            align-items: center;
+        }
+        .invalid-feedback{
+            display:block;
+            color: red;
+        }
+        .progress{
+            border: black 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="images.jpeg" alt="background_image"> -->
+    <div class="container">
+        <form id="signup-form">
+            <h2 class="jumbotron" style="background-color:#4cae4c; color: #fff;">Sign Up to Continue</h2>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="first_name" value="" class="form-control" id="firstName" placeholder="Enter First Name">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="last_name" value="" class="form-control" id="lastName" placeholder="Enter Last Name">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="gender">Gender:
+                        <label class="radio-inline" for="male">
+                            <input type="radio" value="male" name="gender">Male
+                        </label>
+                        <label class="radio-inline" for="female">
+                            <input type="radio" value="female" name="gender">Female
+                        </label>
+                        <div class="invalid-feedback"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="emailId">Email</label>
+                <input type="text" name="user_email" class="form-control" id="emailId" placeholder="Enter Email Address">
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="userName">Username</label>
+                <input type="text" name="user_name" class="form-control" id="userName" placeholder="Enter Username">
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="userPassword">Password</label>
+                    <input type="password" name="userPassword" class="form-control" id="userPassword" placeholder="Enter Password">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm Your Password">
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="file_uploads">
+                <label for="uploading_image">Upload your image</label>
+                <br>
+                <input  type="file" name="uploads" id="uploading_image">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:2%">
+                        <span class="progress-bar-text">0</span>
+                    </div>
+                </div>           
+            <hr>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                    I agree to all the Terms And Conditions
+                    </label>
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        let signUpForm = $("#signup-form")
+        // console.log(signUpForm)
+
+        signUpForm.on('submit',function(event){
+            let error = 0
+            //Either we can target by traversing or we can target using find()
+            // let res = $("form").children().children()
+
+            //Targeting first name
+            const first_name = $("form").find('[name="first_name"]')
+
+            // //Using val() will give the value of the input given by the user while signing up
+            const first_name_value = first_name.val()
+
+            if(!first_name_value){
+                const firstNameMessage = "First Name is required"
+                first_name.siblings('div.invalid-feedback').text(firstNameMessage)
+                error++
+            }else{
+                first_name.siblings('div.invalid-feedback').text(null)
+            }
+
+            //Targeting last name
+            const last_name = $("form").find('[name="last_name"]')
+            const last_name_value = last_name.val()
+
+            if(!last_name_value){
+                const lastNameMessage = "Last Name is required"
+                last_name.siblings('div.invalid-feedback').text(lastNameMessage)
+                error++
+            }else{
+                last_name.siblings('div.invalid-feedback').text(null) 
+            }
+
+            //Targeting Gender
+            const gender_radio  = $("form").find('[for="gender"]');
+            const gender_selection = $("form").find('input[name="gender"]:checked').length
+            if(gender_selection > 0) {
+                gender_radio.children('div.invalid-feedback').text(null);
+            } else {
+                gender_radio.children('div.invalid-feedback').text("Please select your Gender");
+            }
+
+            //Targeting Email ID
+            const email_id = $("form").find('[name="user_email"]')
+            const email_id_value = email_id.val()
+            if(!email_id_value){
+                const emailMessage = "Email ID is required"
+                email_id.siblings('div.invalid-feedback').text(emailMessage)
+                error++
+            }else{
+                email_id.siblings('div.invalid-feedback').text(null) 
+            }
+
+            //Targeting Username
+            const user_name = $("form").find('[name="user_name"]')
+            const user_name_value = user_name.val()
+            if(!user_name_value){
+                const userNameMessage = "User Name is required"
+                user_name.siblings('div.invalid-feedback').text(userNameMessage)
+                error++
+            }else{
+                user_name.siblings('div.invalid-feedback').text(null) 
+            }
+
+            //Targeting Password
+            const user_password = $("form").find('[name="userPassword"]')
+            const user_password_value = user_password.val()
+            if(!user_password_value){
+                const passwordMessage = "Password is required"
+                user_password.siblings('div.invalid-feedback').text(passwordMessage)
+                error++
+            }else{
+                user_password.siblings('div.invalid-feedback').text(null) 
+            }
+
+            //Targeting Confirm Password
+            const confirm_password = $("form").find('[name="confirmPassword"]')
+            const confirm_password_value = confirm_password.val()
+            if(!confirm_password_value){
+                const confirmPasswordMessage = "Confirm Password is required"
+                confirm_password.siblings('div.invalid-feedback').text(confirmPasswordMessage)
+                error++
+            }else if(user_password_value != confirm_password_value){
+                const confirmPasswordMessage = "Confirm Password should match with Password"
+                confirm_password.siblings('div.invalid-feedback').text(confirmPasswordMessage)
+                error++
+            }else{
+                confirm_password.siblings('div.invalid-feedback').text(null) 
+            }
+
+            // const file_upload = $(this).find('[type="file"]')
+            // const file_upload_length = $(this).find('[type="file"]:checked').length
+            // if(file_upload_length == 0){
+            //     const fileUploadMessage = "Please upload the file"
+            //     file_upload.siblings('div.invalid-feedback').text(fileUploadMessage)
+            //     error++
+            // }else{
+            //     file_upload.siblings('div.invalid-feedback').text(null)
+            // }
+
+            const checkBox = $("form").find('[type="checkbox"]')
+            // const checkBox_value = checkBox.val()
+            if(!checkBox.is(":checked")){
+                const checkBoxMessage = "Please accept the terms and conditions"
+                checkBox.siblings('div.invalid-feedback').text(checkBoxMessage)
+                error++
+            }else{
+                checkBox.siblings('div.invalid-feedback').text(null)
+            }
+
+            // return false
+
+            //For Submit
+            if(error>0){
+                return false;
+            }else{
+                const inputData = { first_name_value , last_name_value , email_id_value ,gender_selection ,user_name_value ,user_password_value ,confirm_password_value }
+                console.log(inputData)
+                alert("Signed Up Successfully!!!")
+            }
+
+            const progress_bar = $(".progress").find('.progress-bar')
+            const progress_bar_progress = progress_bar.find(".progress-bar-text")
+            //Ready State
+            const reqObj = new XMLHttpRequest()
+            // console.log("1 ",reqObj.readyState)
+            console.log(reqObj)
+            // reqObj.send(inputData)
+            reqObj.upload.addEventListener("progress" , e =>{
+                // console.log(e)
+                const percent = e.lengthComputable ? (e.loaded / e.total) * 100 : 0;
+
+                progress_bar.style.width = percent.toFixed(2) + "%"
+                progress_bar_progress.style.width = percent.toFixed(2) + "%"
+            })
+
+            reqObj.setRequestHeader('Content-Type','multipart/form-data')
+            reqObj.send(new FormData(signUpForm))
+            // reqObj.onerror = () =>{
+            //     alert("Network Error")
+            // }
+            // // reqObj.setRequestHeader('content','')
+            
+            // reqObj.open('POST','/')
+            // // console.log("2 ",reqObj.readyState)
+
+            // reqObj.onprogress = ()=>{
+            //     console.log("3 ",reqObj.readyState)
+            // }
+            
+            // reqObj.onload = () =>{
+            //     console.log("4 " , reqObj.readyState)
+            // }
+
+            // reqObj.onloadend = () =>{
+            //     console.log("5 " , reqObj.readyState)
+            // }
+            // reqObj.send(inputData)
+            // console.log(reqObj)
+        })
+    </script>
+</body>
+</html>

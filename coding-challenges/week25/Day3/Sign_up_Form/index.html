@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+</head>
+<body>
+    <form action="emailto:akshaydhelaria@gmail.com" class="was-validated" onsubmit="return confirm('Signed up successfully')">
+        <div class="form-group">
+            <h2 class="jumbotron">Signup</h2>
+            <label>Name*</label>
+            <br>
+            <input type="name" name="name" placeholder="Enter Name" value="" required>
+            <div class="invalid-feedback">Please fill out this field</div>
+            <br>
+            <label>Email*</label>
+            <br>
+            <input type="email" name="email" placeholder="Enter Email" value="" required>
+            <div class="invalid-feedback">Please fill out this field</div>
+            <br>
+            <br>
+            <label>Phone_number*</label>
+            <input type="tel" name="Phone_number" placeholder="Enter Phone Number" value="" required>
+            <div class="invalid-feedback">Please fill out this field</div>
+            <br>
+            <br>            
+            <label>Password*</label>
+            <input type="password" name="password" placeholder="Enter Password" value="" required>
+            <div class="invalid-feedback">Please fill out this field</div>
+            <br>
+            <br>            
+            <label>Confirm Password*</label>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" value="" required>
+            <div class="invalid-feedback">Please fill out this field</div>
+            <br>
+            <br>
+            <button type="button" name="submit" class="btn btn-primary">Sign Up</button>
+            <br>
+            <label class="required">* Required Field</label>
+        </div>           
+    </form>
+</body>
+</html>

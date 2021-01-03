@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: teal;
+        }
+        .time{
+            color: white;
+            font-size: 100px;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <div class="time">0:0:0</div>
+        <button type="submit" class="btn btn-primary" onclick="timer()">Start</button>
+        <button type="submit" class="btn btn-warning" onclick="stopWatch()">Stop</button>
+        <button type="submit" class="btn btn-danger" onclick="resetWatch()">Reset</button>
+    </div>
+    <script type="text/javascript" src="stopwatch.js"></script>
+</body>
+</html>
